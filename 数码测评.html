@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>摄影师小岳 · 数码测评</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Microsoft YaHei',sans-serif;background:#0a0a0a;color:#e0e0e0}
+.back{display:inline-block;color:#c9a96e;padding:10px 16px;font-size:.8rem;position:fixed;top:10px;left:10px;z-index:100;background:rgba(10,10,10,.9);border-radius:5px;border:1px solid rgba(201,169,110,.12)}
+section{padding:70px 20px;max-width:1400px;margin:0 auto}
+h2{text-align:center;color:#c9a96e;font-size:1.6rem;margin-bottom:30px}h2::after{content:"";display:block;width:30px;height:2px;background:#c9a96e;margin:8px auto 0}
+.g{columns:2;column-gap:12px}@media(max-width:768px){.g{columns:1}}
+.item{break-inside:avoid;margin-bottom:12px;border-radius:6px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.03)}
+.item video{width:100%;display:block;object-fit:contain;max-height:400px;background:#000}
+.vcaption{padding:8px 12px;font-size:12px;color:#999;text-align:center;background:#111;border-top:1px solid rgba(255,255,255,.03)}
+.video-wrap{position:relative}.video-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;background:rgba(0,0,0,.2);z-index:1}.video-wrap::before{content:"▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;pointer-events:none;font-size:2.5rem;color:rgba(255,255,255,.8);text-shadow:0 2px 10px rgba(0,0,0,.6)}
+</style></head><body>
+<a href="./index.html" class="back">← 返回</a>
+<section><h2>数码测评</h2><div class="g">
+<div class="item"><div class="video-wrap"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E6%95%B0%E7%A0%81%E6%B5%8B%E8%AF%84/REDMI%20K%20Pad%E6%B5%8B%E8%AF%84.mp4" type="video/mp4"></video></div><div class="vcaption">REDMI K Pad测评</div></div>
+<div class="item"><div class="video-wrap"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E6%95%B0%E7%A0%81%E6%B5%8B%E8%AF%84/%E5%B0%8F%E7%B1%B3%20MIX%20Flip%202%E6%B5%8B%E8%AF%84.mp4" type="video/mp4"></video></div><div class="vcaption">小米 MIX Flip 2测评</div></div>
+<div class="item"><div class="video-wrap"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E6%95%B0%E7%A0%81%E6%B5%8B%E8%AF%84/%E7%BA%A2%E7%B1%B3K80%E8%87%B3%E5%B0%8A%E7%89%88%EF%BC%8C%E6%B5%8B%E8%AF%84.mp4" type="video/mp4"></video></div><div class="vcaption">红米K80至尊版，测评</div></div>
+</div></section>
+<script>(function(){var vs=document.querySelectorAll('video');var p=null;vs.forEach(function(v){v.addEventListener('play',function(){if(p&&p!==v)p.pause();p=v;if(v.requestFullscreen)v.requestFullscreen();else if(v.webkitRequestFullscreen)v.webkitRequestFullscreen()});v.addEventListener('ended',function(){p=null})})})()</script>
+</body></html>
