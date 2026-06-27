@@ -7,10 +7,14 @@ h2{text-align:center;color:#c9a96e;font-size:1.6rem;margin-bottom:30px}
 h2::after{content:"";display:block;width:30px;height:2px;background:#c9a96e;margin:8px auto 0}
 .video-wrapper{max-width:900px;margin:0 auto}
 .video-wrapper video{width:100%;display:block;border-radius:6px;background:#000}
+
+.video-wrap{position:relative;display:inline-block;width:100%}
+.video-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;background:rgba(0,0,0,.25);z-index:1}
+.video-wrap::before{content:"▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;pointer-events:none;font-size:2.5rem;color:rgba(255,255,255,.85);text-shadow:0 2px 10px rgba(0,0,0,.6);font-family:sans-serif}
+.video-wrap video{display:block;width:100%}
 </style></head><body>
 <a href="./index.html" class="back">← 返回</a>
-<section><h2>🚁 航拍</h2><div class="video-wrapper">
-<video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%88%AA%E6%8B%8D/%E5%A8%81%E6%B5%B7%E5%B8%83%E9%B2%81%E7%BB%B4%E6%96%AF%E5%8F%B7.mp4" type="video/mp4"></video>
+<section><h2>🚁 航拍</h2><div class="video-wrapper"><div class="video-wrap"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%88%AA%E6%8B%8D/%E5%A8%81%E6%B5%B7%E5%B8%83%E9%B2%81%E7%BB%B4%E6%96%AF%E5%8F%B7.mp4" type="video/mp4"></video></div>
 </div></section>
 <script>
 (function(){
