@@ -33,4 +33,22 @@ v.addEventListener('ended',function(){playing=null;});
 })();
 </script>
 
+
+<script>
+(function(){
+var videos=document.querySelectorAll('video');
+var playing=null;
+videos.forEach(function(v){
+v.addEventListener('play',function(){
+if(playing && playing!==v) playing.pause();
+playing=v;
+if(v.requestFullscreen) v.requestFullscreen();
+else if(v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+else if(v.msRequestFullscreen) v.msRequestFullscreen();
+});
+v.addEventListener('ended',function(){playing=null;});
+});
+})();
+</script>
+
 </body></html>
