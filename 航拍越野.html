@@ -28,4 +28,22 @@ h2::after{content:'';display:block;width:35px;height:2px;background:#c9a96e;marg
 <div class="card"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D.mp4" type="video/mp4"></video><div class="info"><h3>终版</h3></div></div>
 <div class="card"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%88%AA%E6%8B%8D/%E5%A8%81%E6%B5%B7%E5%B8%83%E9%B2%81%E7%BB%B4%E6%96%AF%E5%8F%B7.mp4" type="video/mp4"></video><div class="info"><h3>15f032f817df912366fbd012434be6</h3></div></div>
 <div class="card"><video controls preload="auto"><source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D/%E5%B7%A1%E6%B8%B8%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D.mp4" type="video/mp4"></video><div class="info"><h3>8b609734303da6e5c6c2a375f10b2e</h3></div></div>
-</div></section></body></html>
+</div></section>
+<script>
+(function(){
+var videos=document.querySelectorAll('video');
+var playing=null;
+videos.forEach(function(v){
+v.addEventListener('play',function(){
+if(playing && playing!==v) playing.pause();
+playing=v;
+if(v.requestFullscreen) v.requestFullscreen();
+else if(v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+else if(v.msRequestFullscreen) v.msRequestFullscreen();
+});
+v.addEventListener('ended',function(){playing=null;});
+});
+})();
+</script>
+
+</body></html>
