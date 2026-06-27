@@ -107,7 +107,13 @@ function renderCats(){
 function renderCat(type,cat,ci){
   const thumbs=cat.files.map((f,fi)=>`
     <div class="thumb">
-      ${type==='video'?`<video src="${URL.createObjectURL(f)}" muted></video>`:`<img src="${URL.createObjectURL(f)}">`}
+      ${type==='video'?`<div class="card" style="position:relative;background:#1a1a1a;overflow:hidden">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#666;flex-direction:column">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+<span style="margin-top:8px;font-size:12px;color:#555">视频请查看完整版</span>
+</div>
+<div class="info"><h3>视频文件</h3></div>
+</div>`:`<img src="${URL.createObjectURL(f)}">`}
       <button class="del" onclick="removeFile('${type}',${ci},${fi});event.stopPropagation()">×</button>
       <div class="name">${f.name.slice(0,15)}</div>
     </div>`).join('');
@@ -159,10 +165,22 @@ async function exportZIP(){
     }
     const mp4s=cat.files.filter(f=>f.name.endsWith('.mp4'));
     const urls=mp4s.map(f=>`./${folder}/${f.name}`);
-    vcards+=`<a href="./${cn}.html" class="card"><video src="${urls[0]||''}" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;background:#000"></video><div class="co"><h3>${cn}</h3><span>${cat.files.length}个视频</span></div></a>`;
+    vcards+=`<a href="./${cn}.html" class="card"><div class="card" style="position:relative;background:#1a1a1a;overflow:hidden">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#666;flex-direction:column">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+<span style="margin-top:8px;font-size:12px;color:#555">视频请查看完整版</span>
+</div>
+<div class="info"><h3>视频文件</h3></div>
+</div><div class="co"><h3>${cn}</h3><span>${cat.files.length}个视频</span></div></a>`;
     
     const vitems=cat.files.map(f=>f.name.endsWith('.mp4')
-      ?`<div class="item"><video controls preload="none"><source src="./${folder}/${f.name}" type="video/mp4"></video></div>`
+      ?`<div class="item"><div class="card" style="position:relative;background:#1a1a1a;overflow:hidden">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#666;flex-direction:column">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+<span style="margin-top:8px;font-size:12px;color:#555">视频请查看完整版</span>
+</div>
+<div class="info"><h3>${f.name}</h3></div>
+</div></div>`
       :`<div class="item" style="display:flex;align-items:center;justify-content:center;color:#888;font-size:0.8rem">${f.name}（非MP4格式）</div>`).join('');
     
     zip.file(`${cn}.html`,`<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${name} · ${cn}</title>
