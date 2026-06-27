@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>摄影师小岳 · 作品集</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Microsoft YaHei',sans-serif;background:#0a0a0a;color:#e0e0e0}
 a{text-decoration:none;color:inherit}
+
 .hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%);z-index:0}
-.hero-c{position:relative;z-index:1;text-align:center}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,#0a0a0a);z-index:1}
+.hero-c{position:relative;z-index:2;text-align:center}
 .hero-c h1{font-size:3.5rem;color:#c9a96e;letter-spacing:8px;margin-bottom:12px}
-.hero-c p{color:#888;letter-spacing:4px;font-size:1.1rem}
-.scroll{position:absolute;bottom:30px;z-index:1;color:#c9a96e;font-size:.8rem;animation:b 2s infinite}
+.hero-c p{color:#bbb;letter-spacing:4px;font-size:1.1rem}
+.scroll{position:absolute;bottom:30px;z-index:2;color:#c9a96e;font-size:.8rem;animation:b 2s infinite}
 @keyframes b{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 section{padding:60px 20px;max-width:1400px;margin:0 auto}
@@ -50,10 +51,9 @@ h2::after{content:'';display:block;width:40px;height:2px;background:#c9a96e;marg
 <body>
 
 <section class="hero">
-<video autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;z-index:0">
+<video autoplay muted loop playsinline preload="auto">
 <source src="https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/FPV%E6%8B%8D%E6%91%84/%E6%B2%99%E6%BB%A9%E9%A3%98%E9%80%B8.mp4" type="video/mp4">
 </video>
-<div class="hero-bg"></div>
 <div class="hero-c"><h1>摄影师小岳</h1><p>视 觉 创 作 者</p></div>
 <div class="scroll">▼</div>
 </section>
@@ -88,7 +88,7 @@ var vd=[
 {label:"越野跟拍",display:"越野跟拍",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D/%E5%B7%A1%E6%B8%B8%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D/%E6%91%A9%E6%89%98%E8%89%87%E5%86%B2%E6%B5%AA%E8%B7%9F%E6%8B%8D.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D/%E8%B6%8A%E9%87%8E%E8%B7%9F%E6%8B%8D.mp4"],count:3},
 {label:"人物",display:"人物",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E4%BA%BA%E7%89%A9/%E5%A8%81%E6%B5%B7%E6%99%9A%E9%9C%9E.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E4%BA%BA%E7%89%A9/%E6%A8%B1%E8%8A%B1.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E4%BA%BA%E7%89%A9/%E6%B2%99%E6%BB%A9%E9%9C%B2%E8%90%A5.mp4"],count:3},
 {label:"餐饮",display:"餐饮",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E7%BE%8E%E9%A3%9F/%E5%8D%97%E9%97%A8%E6%B6%AE%E8%82%89.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E7%BE%8E%E9%A3%9F/%E7%BA%B3%E5%90%89%E6%9D%91%E4%B8%B2%E7%83%A7.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E7%BE%8E%E9%A3%9F/%E7%BA%B3%E5%90%89%E6%9D%91%E4%B8%B2%E7%83%A72.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E7%BE%8E%E9%A3%9F/%E9%87%91%E7%A4%BE%E9%95%BF%E7%83%A7%E7%83%A4.mp4"],count:4},
-{label:"装修",display:"装修",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/1.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/2.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/3.mp4"],count:3},
+{label:"装修",display:"装修",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%A3%85%E4%BF%AE/1.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%A3%85%E4%BF%AE/2.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E8%A3%85%E4%BF%AE/3.mp4"],count:3},
 {label:"千川素材",display:"千川素材",urls:["https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/1.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/2.mp4","https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/video/%E5%8D%83%E5%B7%9D%E7%B4%A0%E6%9D%90/3.mp4"],count:3}
 ];
 
@@ -112,9 +112,9 @@ var pd=[
 {label:"汽车",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E6%8B%8D%E8%BD%A6/1%20(2).jpg",count:12},
 {label:"漫展",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E4%BA%BA%E5%83%8F/%E6%BC%AB%E5%B1%95/1.jpg",count:6},
 {label:"车展",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E4%BA%BA%E5%83%8F/%E9%9D%92%E5%B2%9B%E5%9B%BD%E9%99%85%E8%BD%A6%E5%B1%95/1.jpg",count:10},
+{label:"毕业照",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E6%AF%95%E4%B8%9A%E7%85%A7/1.jpg",count:7},
 {label:"夜樱",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E4%BA%BA%E5%83%8F/%E5%86%99%E7%9C%9F/%E5%A4%9C%E6%A8%B1/1.jpg",count:6},
-{label:"樱花",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E4%BA%BA%E5%83%8F/%E5%86%99%E7%9C%9F/%E6%A8%B1%E8%8A%B1/1.jpg",count:8},
-{label:"毕业照",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E6%AF%95%E4%B8%9A%E7%85%A7/1.jpg",count:7}
+{label:"樱花",img:"https://photographer-resume.oss-cn-hangzhou.aliyuncs.com/img/%E4%BA%BA%E5%83%8F/%E5%86%99%E7%9C%9F/%E6%A8%B1%E8%8A%B1/1.jpg",count:8}
 ];
 var pgrid=document.getElementById('pg');
 pd.forEach(function(d){
